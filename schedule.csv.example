@@ -1,0 +1,4 @@
+TaskName, TaskDefinition, CronJobNotation
+PhysicsTest, Revise for the test daily, 0 16 * * *
+JoggingTime, Jogging for 30 minutes, 0 7 * * *
+MedicalCheckup, Checkup for the month, 0 15 1 */6 *
