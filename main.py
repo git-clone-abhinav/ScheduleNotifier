@@ -43,7 +43,7 @@ def type_tasks(tasks):
     """
     print("Starting to type tasks...")
     print("Bring Cursor to the Telegram bot in 10 seconds...")
-    time.sleep(10)
+    time.sleep(3)
     for task in tasks:
         print("Typing task: " + task[0])
         pyautogui.typewrite("/add", interval=0.1)
@@ -52,8 +52,15 @@ def type_tasks(tasks):
         pyautogui.typewrite(task[0], interval=0.1)
         pyautogui.press('enter')
         time.sleep(3)
-        pyautogui.typewrite(task[1], interval=0.1)
-        pyautogui.press('enter')
+        lines = task[1].split('\\n')
+        print(lines)
+        for i in range(len(lines)):
+            pyautogui.typewrite(lines[i], interval=0.1)
+            if i!=len(lines)-1:
+                with pyautogui.hold('shift'):
+                    pyautogui.press('enter')
+            else:
+                pyautogui.press('enter')
         time.sleep(3)
         pyautogui.typewrite(task[2].rstrip('\n'), interval=0.1)
         pyautogui.press('enter')

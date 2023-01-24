@@ -27,12 +27,12 @@ $ pip3 install -r requirements.txt
 
 ### Create a `schedule.csv` according to the format given below. You can use [this](https://crontab.guru/) tool for generating cron notation.
 ```csv
-TaskName, TaskDefinition, CronJobNotation
+TaskName, TaskMessage, CronJobNotation
 PhysicsTest, Revise for the test daily, 0 16 * * *
 JoggingTime, Jogging for 30 minutes, 0 7 * * *
 MedicalCheckup, Checkup for the month, 0 15 1 */6 *
 ```
-here, `TaskName` is the name of the task, `TaskDefinition` is the definition of the task and `CronJobNotation` is the cron notation for the task.
+here, `TaskName` is the name of the task, `TaskMessage` is the definition of the task and `CronJobNotation` is the cron notation for the task. Place `\n` for new line in the `TaskMessage` for a new line in the message.
 
 `0 15 1 */6 *` means every 6 months on the 1st day of the month at 15:00. For more details follow the below conventions or the [man page](https://crontab.guru/crontab.5.html)
 
